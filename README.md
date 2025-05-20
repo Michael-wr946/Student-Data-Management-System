@@ -1,3 +1,49 @@
-The project was mainly focused to work with the semester results published by my university, where they released the grades and the semester wise GPA based on roll numbers. Names were not displayed on the results, making it tough to find the relative performance. I had a pdf containing the names, roll numbers, email, and date of birth of the students, so by using C++, I thought to combine the two pdfs and make a database of students with all their details including their semester GPAs. I couldn't find a C++ library to work with PDFs so I copy-pasted the PDFs to two separate ".txt" files. "Names.txt" for the names, roll nos., email, and DOB and "Grades.txt" for the SGPAs and roll no. of the students.
-The #include<fstream> header file was used to input data from the two ".txt" files. I created a class called "student" which stored data of each student like name, roll no., SGPA , email and DOB. A vector of datatype "students", called "Database" was used to store data of all the students. The roll number was used as an index for the vector as it was unique for each student. Eg. for Roll No = "B180001ME", "0001" was taken as the index, which made accessing each student faster and easier.
- #Rest of the readme yet to be added
+Student Performance Tracker & Database
+Project Overview
+This project addresses the challenge of analyzing university semester results when they are published without student names, only roll numbers and grades. This makes it difficult for students to gauge their relative performance.
+
+This C++ application merges student personal details (name, email, DOB) with their academic performance (semester GPAs) to create a comprehensive and easily searchable database.
+
+The Problem
+University semester results were released with roll numbers and SGPAs but lacked student names.
+
+This made it challenging to quickly find individual results or understand one's academic standing relative to peers.
+
+A separate list containing student names, roll numbers, email, and date of birth was available.
+
+The Solution
+A C++ program was developed to:
+
+Combine Data Sources: Integrate student details from one source with academic grades from another.
+
+Create a Database: Store the combined information in an organized manner.
+
+Enable Easy Access: Allow for quick searching and retrieval of student records.
+
+How It Works & Technical Details
+Initial Data Handling: Due to challenges in finding a suitable C++ PDF parsing library at the time, the source PDFs (one with names/roll nos./emails/DOBs, and another with SGPAs/roll nos.) were manually converted into two separate text files:
+
+Names.txt: Containing student personal details.
+
+Grades.txt: Containing semester GPAs and corresponding roll numbers.
+
+Data Input: Standard C++ file input/output operations are used to read data from these .txt files.
+
+Core Data Structure:
+
+A student class is defined to encapsulate all relevant information for each student (name, roll no., SGPA, email, DOB).
+
+A std::vector<student> named Database is used to store all student objects.
+
+Efficient Indexing & Access: To facilitate faster data retrieval, the numeric part of a student's roll number (e.g., "0001" from "B180001ME") is used as an effective index for accessing records within the Database vector. This simplifies and speeds up the process of looking up individual student data.
+
+Key Features (Implemented/Planned)
+Consolidates student academic and personal data.
+
+Uses roll numbers for efficient data lookup.
+
+(Other features: like searching, sorting, exporting to CSV)
+Technologies Used
+Language: C++
+
+Core C++ Libraries: Standard Library (vectors, file I/O, strings, etc.)
